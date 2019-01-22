@@ -23,7 +23,7 @@ jobs:
     working_directory: ~/src
     # The primary container is an instance of the first image listed. The job's commands run in this container.
     docker:
-      - image: circleci/node:10.15.0
+      - image: circleci/node:10.15.0-browsers
     steps:
       - checkout
       - restore_cache:
