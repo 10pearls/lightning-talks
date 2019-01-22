@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build_and_test:
+  lint:
     working_directory: ~/src
     # The primary container is an instance of the first image listed. The job's commands run in this container.
     docker:
@@ -19,6 +19,22 @@ jobs:
       - run:
           name: Run lint
           command: npm run lint
+  test:
+    working_directory: ~/src
+    # The primary container is an instance of the first image listed. The job's commands run in this container.
+    docker:
+      - image: circleci/node:10.15.0
+    steps:
+      - checkout
+      - restore_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+      - run:
+          name: Install dependencies via npm
+          command: npm install
+      - save_cache:
+          key: dependency-cache-{{ checksum "package.json" }}
+          paths:
+            - node_modules
       - run:
           name: Test
           command: npm run test
@@ -36,7 +52,5 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - build_and_test
-          filters:
-            branches:
-              only: master
+      - build
+      - test
