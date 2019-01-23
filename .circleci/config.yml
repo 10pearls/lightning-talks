@@ -52,18 +52,8 @@ workflows:
   version: 2
   test:
     jobs:
-      - test:
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: master
+      - test
 
   lint:
     jobs:
-      - lint:
-          filters:
-            tags:
-              only: /.*/
-            branches:
-              only: master
+      - lint
