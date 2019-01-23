@@ -50,12 +50,18 @@ jobs:
 
 workflows:
   version: 2
-  test_and_lint:
+  test:
     jobs:
-      - lint
       - test:
-          requires:
-            - lint
+          filters:
+            tags:
+              only: /.*/
+            branches:
+              only: master
+
+  lint:
+    jobs:
+      - lint:
           filters:
             tags:
               only: /.*/
