@@ -52,6 +52,7 @@ workflows:
   version: 2
   test_and_lint:
     jobs:
+      - lint
       - test:
           requires:
             - lint
