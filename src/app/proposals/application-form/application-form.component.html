@@ -1,3 +1,31 @@
-<p>
-  application-form works!
-</p>
+<div class='row'>
+  <div class='login-wrapper'>
+      <p-card class="login-card" header="Login" subheader="Use your COGS credentials to login">
+        <div>
+          <div class="p-col"></div>
+          <div class="p-grid p-dir-col">
+            <div class="p-col login-logo">
+              <img src='/assets/logo.png' alt=""/>
+            </div>
+            <div class="p-col"></div>
+            <div class="p-col">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-user"></i></span>
+                <input type="text" pInputText placeholder="Username" name="userName">
+              </div>
+            </div>
+            <div class="p-col">
+              <div class="ui-inputgroup">
+                <span class="ui-inputgroup-addon"><i class="pi pi-lock"></i></span>
+                <input type="password" pInputText placeholder="Password" name="password">
+              </div>
+            </div>
+          </div>
+          <div class="p-col"></div>
+          <p-footer>
+            <button pButton type="button" (click)="onLogin()" label="Login" icon="pi pi-check" style="margin-right: .25em"></button>
+          </p-footer>
+        </div>
+      </p-card>
+  </div>
+</div>
