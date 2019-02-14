@@ -1,8 +1,10 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
+import { HttpErrorResponse } from '@angular/common/http';
 
 import { AuthService } from '../../core/auth/auth.service';
 import { maxLengthField, minLengthField, patternField, requiredField } from '../../constants/form-validation-messages.constant';
+import { ToastMessageService } from '../../core/toast-message/toast-message.service';
 
 @Component({
   selector: 'app-login',
@@ -13,6 +15,7 @@ export class LoginComponent implements OnInit {
   constructor(
     private auth: AuthService,
     private fb: FormBuilder,
+    private toast: ToastMessageService,
   ) {}
 
   userNameFieldName = 'Name';
@@ -67,10 +70,19 @@ export class LoginComponent implements OnInit {
 
     if (this.loginForm.valid) {
       const userData = {userName: this.userName.value, password: this.password.value};
-      this.auth.userLogin(userData)
-        .subscribe((response) => {
-          this.auth.processUserLogin(response);
-        });
+      this.onValidFormLogin(userData);
+    }
+  }
+
+  async onValidFormLogin(userData) {
+    try {
+      const response = await this.auth.userLogin(userData);
+      this.auth.processUserLogin(response);
+    } catch (e) {
+        if (e instanceof HttpErrorResponse) {
+          const errorMessage = e.error.errors[0].detail;
+          this.toast.error('Auth Error', errorMessage);
+        }
     }
   }
 

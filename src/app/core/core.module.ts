@@ -7,6 +7,7 @@ import { SERVICE_STORAGE } from '../constants/storage.constant';
 import { CogsHttpClient, cogsHttpClientCreator } from './cogs-http-client/cogs-http-client.service';
 import { HttpClient } from '@angular/common/http';
 import { StorageService } from './storage/storage.service';
+import { ToastMessageService } from './toast-message/toast-message.service';
 
 @NgModule({
   declarations: [],
@@ -28,6 +29,7 @@ import { StorageService } from './storage/storage.service';
     },
     StorageService,
     AuthService,
+    ToastMessageService,
   ],
 })
 export class CoreModule { }

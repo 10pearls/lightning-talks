@@ -18,7 +18,7 @@ export class AuthService {
 
   userLogin(details: {userName: string, password: string}) {
     const parsedData = apiSerializer('auths', details, { attributes: ['userName', 'password']});
-    return this.cogsHttpClient.post<LoginResponse>('api/auth/login', parsedData);
+    return this.cogsHttpClient.post<LoginResponse>('api/auth/login', parsedData).toPromise();
   }
 
   processUserLogin({ accessToken, lightningAuthToken }: LoginResponse) {

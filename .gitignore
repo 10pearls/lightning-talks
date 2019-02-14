@@ -45,3 +45,4 @@ Thumbs.db
 # Coverage
 .nyc_output
 coverage
+*.code-workspace
