@@ -1,0 +1,8 @@
+<div>
+    <h1>Team Members</h1>
+    <ul>
+      <li class="text" *ngFor="let member of teamMembers | async">
+          {{member.name}}
+        </li>
+    </ul>
+  </div>

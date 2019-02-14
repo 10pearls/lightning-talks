@@ -5,6 +5,14 @@
 export const environment = {
   production: false,
   cogsApiUrl: 'http://10.0.0.159:1234',
+  firebase: {
+    apiKey: "AIzaSyCgzMsB_4_4MPMfTQY6A_XCPTsMvVsgmNg",
+    authDomain: "lightning-app-dev.firebaseapp.com",
+    databaseURL: "https://lightning-app-dev.firebaseio.com",
+    projectId: "lightning-app-dev",
+    storageBucket: "lightning-app-dev.appspot.com",
+    messagingSenderId: "164968253058",
+  },
 };
 
 /*
