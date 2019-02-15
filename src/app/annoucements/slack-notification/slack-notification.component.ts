@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SlackService } from '../slack-service.service';
 
 @Component({
   selector: 'app-slack-notification',
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SlackNotificationComponent implements OnInit {
 
-  constructor() { }
+  formData = {
+    title: '',
+    description: '',
+    date: '',
+    speakers: '',
+  };
+
+  constructor(
+    private slack: SlackService,
+  ) { }
 
   ngOnInit() {
+  }
+
+  onSend() {
+    console.log('Send Notification Button Clicked', this.formData)
+    this.slack.sendNotification(this.formData);
   }
 
 }

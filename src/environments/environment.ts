@@ -13,6 +13,7 @@ export const environment = {
     storageBucket: "lightning-app-dev.appspot.com",
     messagingSenderId: "164968253058",
   },
+  slackHook: 'https://hooks.slack.com/services/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',
 };
 
 /*

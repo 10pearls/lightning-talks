@@ -6,34 +6,41 @@
             <div class="p-col">
               <div class="ui-inputgroup">
                   <button pButton type="button" label="Talk Title"></button>
-                <input type="text" pInputText placeholder="Salesforce 101" name="title">
+                <input type="text" pInputText placeholder="Salesforce 101" [(ngModel)]='formData.title'>
               </div>
             </div>
            
             <div class="p-col">
               <div class="ui-inputgroup">
                 <button pButton type="button" label="Description"></button>
-                <input type="text" pInputText placeholder="How to be a leader" name="description">
+                <input type="text" pInputText placeholder="How to be a leader"  [(ngModel)]='formData.description'>
               </div>
             </div>
 
             <div class="p-col">
               <div class="ui-inputgroup">
-                <button pButton type="button" label="Speakcers"></button>
-                <input type="text" pInputText placeholder="Musab and Sadiq" name="description">
+                <button pButton type="button" label="Speakers"></button>
+                <input type="text" pInputText placeholder="Musab and Sadiq"  [(ngModel)]='formData.speakers'>
               </div>
             </div>
+
+            <div class="p-col">
+                <div class="ui-inputgroup">
+                  <button pButton type="button" label="GIF Link"></button>
+                  <input type="text" pInputText placeholder="Giphy Link"  [(ngModel)]='formData.gifLink'>
+                </div>
+              </div>
 
             <div class="p-col">
               <div class="ui-inputgroup">
                 <button pButton type="button" label="Date"></button>
-                <p-calendar [(ngModel)]="scheduledDate"></p-calendar>
+                <p-calendar [(ngModel)]="formData.date"></p-calendar>
               </div>
             </div>
            
           </div>
           <p-footer>
-            <button pButton type="button" (click)="onLogin()" label="Send Slack Notification" icon="pi pi-check" style="margin-right: .25em"></button>
+            <button pButton type="button" (click)="onSend()" label="Send Slack Notification" icon="pi pi-check" style="margin-right: .25em"></button>
           </p-footer>
         </div>
       </p-card>
