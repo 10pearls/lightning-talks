@@ -2,6 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { GeneralShellComponent } from './shell/general/general-shell.component';
 import { LoginComponent } from './auth/login/login.component';
+import { ApplicationFormComponent } from './proposals/application-form/application-form.component';
+import { SlackNotificationComponent } from './annoucements/slack-notification/slack-notification.component';
 
 const routes: Routes = [
   {
@@ -26,6 +28,10 @@ const routes: Routes = [
   {
     path: 'application-form',
     component: ApplicationFormComponent,
+  },
+  {
+    path: 'slack-notification',
+    component: SlackNotificationComponent,
   },
 ];
 

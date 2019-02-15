@@ -4,6 +4,7 @@ import { CardModule } from 'primeng/card';
 import { MessageModule } from 'primeng/message';
 import { ToastModule } from 'primeng/toast';
 import { MessageService } from 'primeng/api';
+import {CalendarModule} from 'primeng/calendar';
 
 @NgModule({
   declarations: [],
@@ -12,6 +13,7 @@ import { MessageService } from 'primeng/api';
     CardModule,
     MessageModule,
     ToastModule,
+    CalendarModule,
   ],
   providers: [
     MessageService,

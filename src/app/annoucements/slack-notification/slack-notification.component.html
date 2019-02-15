@@ -1,0 +1,41 @@
+<div class='row'>
+  <div class='login-wrapper'>
+      <p-card class="login-card" header="Slack Notifications" subheader="Send Slack Notifications">
+        <div>
+          <div class="p-grid p-dir-col">
+            <div class="p-col">
+              <div class="ui-inputgroup">
+                  <button pButton type="button" label="Talk Title"></button>
+                <input type="text" pInputText placeholder="Salesforce 101" name="title">
+              </div>
+            </div>
+           
+            <div class="p-col">
+              <div class="ui-inputgroup">
+                <button pButton type="button" label="Description"></button>
+                <input type="text" pInputText placeholder="How to be a leader" name="description">
+              </div>
+            </div>
+
+            <div class="p-col">
+              <div class="ui-inputgroup">
+                <button pButton type="button" label="Speakcers"></button>
+                <input type="text" pInputText placeholder="Musab and Sadiq" name="description">
+              </div>
+            </div>
+
+            <div class="p-col">
+              <div class="ui-inputgroup">
+                <button pButton type="button" label="Date"></button>
+                <p-calendar [(ngModel)]="scheduledDate"></p-calendar>
+              </div>
+            </div>
+           
+          </div>
+          <p-footer>
+            <button pButton type="button" (click)="onLogin()" label="Send Slack Notification" icon="pi pi-check" style="margin-right: .25em"></button>
+          </p-footer>
+        </div>
+      </p-card>
+  </div>
+</div>

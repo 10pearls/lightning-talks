@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { AuthModule } from './auth/auth.module';
 import { ProposalsModule } from './proposals/proposals.module';
+import { AnnoucementsModule } from './annoucements/annoucements.module';
 import { ShellModule } from './shell/shell.module';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -27,6 +28,7 @@ import { environment } from '../environments/environment';
     ShellModule,
     AuthModule,
     ProposalsModule,
+    AnnoucementsModule,
     AppRoutingModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyCgzMsB_4_4MPMfTQY6A_XCPTsMvVsgmNg",
