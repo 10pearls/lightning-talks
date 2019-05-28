@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SlackHttpClientService } from '../../core/slack-http-client/slack-http-client.service';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomePageComponent implements OnInit {
 
-  constructor() { }
+  constructor(private slackHttpClientService: SlackHttpClientService) { }
 
   ngOnInit() {
+  }
+
+  sendNotification() {
+    this.slackHttpClientService.sendNotification();
+    console.log('This will send the request to foodpoint');
   }
 
 }

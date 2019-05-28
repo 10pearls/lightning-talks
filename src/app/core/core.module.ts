@@ -5,9 +5,10 @@ import { AuthService } from './auth/auth.service';
 import { LOCAL_STORAGE, StorageServiceModule } from 'ngx-webstorage-service';
 import { SERVICE_STORAGE } from '../constants/storage.constant';
 import { CogsHttpClient, cogsHttpClientCreator } from './cogs-http-client/cogs-http-client.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { StorageService } from './storage/storage.service';
 import { ToastMessageService } from './toast-message/toast-message.service';
+import { SlackHttpClientService } from './slack-http-client/slack-http-client.service';
 
 @NgModule({
   declarations: [],
@@ -27,6 +28,8 @@ import { ToastMessageService } from './toast-message/toast-message.service';
       useFactory: cogsHttpClientCreator,
       deps: [HttpClient],
     },
+    HttpClientModule,
+    SlackHttpClientService,
     StorageService,
     AuthService,
     ToastMessageService,
