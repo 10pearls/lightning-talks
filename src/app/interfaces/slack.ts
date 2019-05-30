@@ -11,8 +11,8 @@ export interface AttachmentField extends BaseAttachment {
   fields: SlackField[];
 }
 
-export interface AttachmentSeparator extends BaseAttachment {
-  image_url: string;
+export interface AttachmentImage extends BaseAttachment {
+  imageUrl: string;
 }
 
 export interface AttachmentAction extends AttachmentField {

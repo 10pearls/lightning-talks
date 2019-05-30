@@ -8,14 +8,9 @@ import { SlackHttpClientService } from '../../core/slack-http-client/slack-http-
 })
 export class HomePageComponent implements OnInit {
 
-  constructor(private slackHttpClientService: SlackHttpClientService) { }
+  constructor() { }
 
   ngOnInit() {
-  }
-
-  sendNotification() {
-    this.slackHttpClientService.sendNotification();
-    console.log('This will send the request to foodpoint');
   }
 
 }

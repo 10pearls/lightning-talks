@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { SlackPayload } from '../../interfaces/slack';
 
 @Injectable()
 export class SlackHttpClientService {
 
-  const data: any = {
+  data: any = {
     attachments: [
       {
         fallback: '{{announcement}}\n*Title: * After effects of cheating small in business\n*Description: * {{description}} \n*Speaker(s): *Minhaj Uddin Khan\n*Date: *Tuesday, 9th April\n*Time: * 12:40 sharp (literally)\n*Venue: * 10Pearls University Auditorium',
@@ -13,37 +14,37 @@ export class SlackHttpClientService {
           {
             title: '',
             value: '@channel, and :zap: *\'Lightning Talks\'* :zap: fans, we have an upcoming talk tomorrow:',
-            'short': false
+            short: false
           },
           {
             title: 'Title',
             value: 'Test sent from angular testing app',
-            'short': false
+            short: false
           },
           {
             title: 'Description',
             value: 'Qur\'anic commentary on the evils of imbalanced attitudes in business.',
-            'short': false
+            short: false
           },
           {
             title: 'Speaker(s)',
             value: 'Minhaj Uddin Khan',
-            'short': true
+            short: true
           },
           {
             title: 'Date',
             value: 'Tuesday, 9th April',
-            'short': true
+            short: true
           },
           {
             title: 'Venue',
             value: '10Pearls University Auditorium',
-            'short': true
+            short: true
           },
           {
             title: 'Time',
             value: '12:40 sharp (literally)',
-            'short': true
+            short: true
           }
         ]
       },
@@ -88,11 +89,12 @@ export class SlackHttpClientService {
 
   constructor(private http: HttpClient) { }
 
-  sendNotification() {
+  // TODO: Need to handle the Slack HttpResponse Error
+  sendNotification(slackPayload: SlackPayload) {
     let headers = new HttpHeaders();
     headers = headers.set('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
     this.http
-      .post('https://hooks.slack.com/services/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', this.data, { headers })
+      .post('https://hooks.slack.com/services/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', slackPayload, { headers })
       .subscribe((res) => {
         console.log('Sucess');
         console.log('Sucess', res);

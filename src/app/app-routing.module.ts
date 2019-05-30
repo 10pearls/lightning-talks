@@ -17,6 +17,10 @@ const routes: Routes = [
         path: 'landing-page',
         loadChildren: './home/home.module#HomeModule',
       },
+      {
+        path: 'slack',
+        loadChildren: './slack/slack.module#SlackModule',
+      },
     ],
   },
   {
