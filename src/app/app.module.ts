@@ -17,8 +17,8 @@ import { ShellModule } from './shell/shell.module';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    PrimeNgModule,
     CoreModule,
+    PrimeNgModule,
     ShellModule,
     AuthModule,
     AppRoutingModule,

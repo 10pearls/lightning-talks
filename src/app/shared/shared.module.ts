@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { PrimeNgModule } from '../prime-ng/prime-ng.module';
+import { FormlyPrimeNGModule } from '@ngx-formly/primeng';
 
 @NgModule({
   declarations: [],
@@ -13,6 +14,7 @@ import { PrimeNgModule } from '../prime-ng/prime-ng.module';
     PrimeNgModule,
     HttpClientModule,
     ReactiveFormsModule,
+    FormlyPrimeNGModule,
   ],
   providers: [],
 })
