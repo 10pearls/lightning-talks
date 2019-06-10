@@ -19,6 +19,19 @@ export class SlackPayloadBuilder {
     return this;
   }
 
+  preparePayload(): SlackPayloadBuilder {
+    return this.addAnnouncement()
+      .addAnnouncementTitle()
+      .addTalkTitle()
+      .addTalkDescription()
+      .addSpeakers()
+      .addDate()
+      .addVenue()
+      .addTime()
+      .addGIF('')
+      .addFooter();
+  }
+
   getSlackPayload(): SlackPayload {
     return this.slackPayload;
   }
